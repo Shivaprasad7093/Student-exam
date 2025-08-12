@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "Exam App API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\":\"Test\",\"email\":\"test@example.com\",\"password\":\"pass123\" }"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "host": [
+            "http://localhost:5000"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\":\"test@example.com\",\"password\":\"pass123\" }"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "host": [
+            "http://localhost:5000"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Start Exam (GET)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/exam/start",
+          "host": [
+            "http://localhost:5000"
+          ],
+          "path": [
+            "api",
+            "exam",
+            "start"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Submit Exam",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer <token>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"answers\":[{\"questionId\":\"<id>\",\"answerIndex\":1}] }"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/exam/submit",
+          "host": [
+            "http://localhost:5000"
+          ],
+          "path": [
+            "api",
+            "exam",
+            "submit"
+          ]
+        }
+      }
+    }
+  ]
+}
